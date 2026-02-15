@@ -168,13 +168,6 @@ def build_hl_questions():
             })
 
     # 1. Bottleneck by role
-    for bn in ["Legacy / tech debt", "Lack of leadership", "Poor requirements", "Data quality"]:
-        stats = {}
-        for role in ["Data Engineer", "Analytics Engineer", "Manager / Director / VP", "Data Architect"]:
-            r = base[base["role_clean"] == role]
-            stats[role] = round((r["bottleneck_clean"] == bn).mean() * 100, 1)
-        add_comparison(stats, f'say **"{bn}"** is their biggest bottleneck',
-                      "Bottleneck × Role", f'"{bn}" by Role')
 
     # 2. Fire-fighting by industry
     stats = {}
