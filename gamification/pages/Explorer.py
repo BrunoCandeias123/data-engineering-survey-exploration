@@ -29,7 +29,7 @@ BG_CHART = "rgba(0,0,0,0)"
 # ============================================================
 @st.cache_data
 def load_data():
-    df = pd.read_excel("data/expanded.csv")
+    df = pd.read_csv("data/expanded.csv")
     # Drop the unnamed index column
     if "Unnamed: 0" in df.columns:
         df = df.drop(columns=["Unnamed: 0"])

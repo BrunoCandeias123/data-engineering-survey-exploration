@@ -88,7 +88,7 @@ header {visibility: hidden;}
 # ============================================================
 @st.cache_data
 def load_data():
-    df = pd.read_excel("data/expanded.csv")
+    df = pd.read_csv("data/expanded.csv")
     if "Unnamed: 0" in df.columns:
         df = df.drop(columns=["Unnamed: 0"])
     return df
