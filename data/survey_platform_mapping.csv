@@ -1,0 +1,49 @@
+Original_Response,Category
+"Cloud data warehouse (Snowflake, BigQuery, Redshift, etc.)",Cloud Data Warehouse
+snowflake + iceberg w/ glue,Cloud Data Warehouse
+Azure SQL,Cloud Data Warehouse
+Cloud Azure SQL DB,Cloud Data Warehouse
+SQL Server on Azure,Cloud Data Warehouse
+SQLServer,Cloud Data Warehouse
+Oracle,Cloud Data Warehouse
+Microsoft Fabric,Cloud Data Warehouse
+MSFT Fabric,Cloud Data Warehouse
+Fabric,Cloud Data Warehouse
+SAS cloud,Cloud Data Warehouse
+Salient,Cloud Data Warehouse
+AWS S3 + Glue/Athena,Lake / Lakehouse
+Data lake on S3 w/ athena,Lake / Lakehouse
+"S3 (parquet, csv, whatever) + Amazon Athena",Lake / Lakehouse
+"Iceberg on S3 w/ Glue & Lake Formation, hand-rolled data platform.",Lake / Lakehouse
+"Lakehouse (Databricks, Iceberg/Hudi/Delta + compute engine)",Lake / Lakehouse
+Lakehouse DWH + S3 lake + other DB stores (grapgh/docment),Lake / Lakehouse
+Lakehouse on prem,Lake / Lakehouse
+On-prem data lake / lakehouse,Lake / Lakehouse
+"Databricks + on-prem DW + data marts (i.e., mixed)",Lake / Lakehouse
+On prem Cloudera stack + Spark,Lake / Lakehouse
+S3,Lake / Lakehouse
+"S3, Vespa",Lake / Lakehouse
+Cloud PostgreSQL/MySQL,Operational / OLTP / Product DB
+ClickHouse,Operational / OLTP / Product DB
+ClickHouse and DuckDB,Operational / OLTP / Product DB
+clickhouse and postgres selfhosted in AWS,Operational / OLTP / Product DB
+OLTP,Operational / OLTP / Product DB
+"Product database, analytics and integrations",Operational / OLTP / Product DB
+Salesforce,Operational / OLTP / Product DB
+OpenSearch,Operational / OLTP / Product DB
+RDF Graphs,Operational / OLTP / Product DB
+Vector Databases - AstroDB + WatsonX Orchestrate Knowledge Base,Operational / OLTP / Product DB
+Mixed/hybrid,Hybrid / Infrastructure / Custom
+Cloud IaaS,Hybrid / Infrastructure / Custom
+Microsoft Azure IaaS (SQL Server),Hybrid / Infrastructure / Custom
+On-prem data warehouse,Hybrid / Infrastructure / Custom
+Ab Initio Software,Hybrid / Infrastructure / Custom
+Denodo data virtualization,Hybrid / Infrastructure / Custom
+Warehouse is overselling S3 and EFS,Hybrid / Infrastructure / Custom
+"None, we are developing a data platform",Hybrid / Infrastructure / Custom
+"Depends on the client, we are a management consulting firm",Hybrid / Infrastructure / Custom
+Excel Sheets 👀,File-based / BI / Lightweight
+PowerBI,File-based / BI / Lightweight
+File/power Query,File-based / BI / Lightweight
+Files from public data repository in various file formats etc,File-based / BI / Lightweight
+Local machines. Im a beginner,File-based / BI / Lightweight
