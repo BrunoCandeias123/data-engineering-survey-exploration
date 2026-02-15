@@ -224,14 +224,6 @@ def build_hl_questions():
     add_comparison(stats, "use AI tools **daily or more**", "AI Usage × Industry",
                   "Daily+ AI usage by Industry")
 
-    # 9. Shrinkage by AI adoption
-    stats = {}
-    for ai in ["AI embedded in most workflows", "Building internal AI platforms",
-                "Using AI for tactical tasks", "Experimenting", "No meaningful adoption yet"]:
-        r = base[base["ai_adoption"] == ai]
-        stats[ai] = round((r["team_growth_2026"] == "Shrink").mean() * 100, 1)
-    add_comparison(stats, "expect their team to **shrink**", "Shrink × AI Adoption",
-                  "% expecting shrinkage by AI adoption level")
 
     # 10. Fire-fighting by org size
     stats = {}
@@ -273,7 +265,7 @@ def build_guess_questions():
     })
 
     questions.append({
-        "question": "What % of respondents report **fighting fires** as a team activity?",
+        "question": "What % of respondents report **fighting fires** as a primary focus for the team?",
         "answer": round(base["fights_fires"].mean() * 100, 1),
         "hint": "More than 1 in 5, but less than 1 in 2...",
         "reveal": "Over a quarter of data teams spend significant time firefighting.",
