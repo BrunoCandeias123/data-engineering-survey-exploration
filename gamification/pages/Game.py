@@ -309,21 +309,6 @@ def build_guess_questions():
     })
 
     questions.append({
-        "question": "What % of teams expect to **shrink** in 2026?",
-        "answer": round((base["team_growth_2026"] == "Shrink").mean() * 100, 1),
-        "hint": "The field is generally optimistic...",
-        "reveal": "Cautious optimism. 42% expect growth vs only 7% shrinkage.",
-        "category": "Outlook",
-        "chart_labels": ["Grow", "Stay the same", "Shrink", "Not sure"],
-        "chart_values": [
-            round((base["team_growth_2026"] == g).mean() * 100, 1)
-            for g in ["Grow", "Stay the same", "Shrink", "Not sure"]
-        ],
-        "chart_title": "Team growth expectations 2026",
-        "highlight": "Shrink",
-    })
-
-    questions.append({
         "question": "What % say **modeling is going well** (no pain points)?",
         "answer": 11.3,
         "hint": "Joe Reis called modeling 'in crisis'...",
