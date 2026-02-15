@@ -168,6 +168,13 @@ def build_hl_questions():
             })
 
     # 1. Bottleneck by role
+    for bn in ["Legacy / tech debt", "Lack of leadership", "Poor requirements", "Data quality"]:
+        stats = {}
+        for role in ["Data Engineer", "Analytics Engineer", "Manager / Director / VP", "Data Architect"]:
+            r = base[base["role_clean"] == role]
+            stats[role] = round((r["bottleneck_clean"] == bn).mean() * 100, 1)
+        add_comparison(stats, f'say **"{bn}"** is their biggest bottleneck',
+                      "Bottleneck × Role", f'"{bn}" by Role')
 
     # 2. Fire-fighting by industry
     stats = {}
@@ -186,13 +193,6 @@ def build_hl_questions():
                   "Ad-hoc modeling by Industry")
 
     # 4. Growth by bottleneck
-    stats = {}
-    for bn in ["Legacy / tech debt", "Lack of leadership", "Talent / hiring", "Data quality", "Poor requirements"]:
-        r = base[base["bottleneck_clean"] == bn]
-        stats[bn] = round((r["team_growth_2026"] == "Grow").mean() * 100, 1)
-    add_comparison(stats, "expect their team to **grow** in 2026", "Growth × Bottleneck",
-                  "% expecting growth, by bottleneck")
-
     # 5. No orchestration by org size
     stats = {}
     for size in ["< 50 employees", "50–199", "200–999", "1,000–10,000", "10,000+"]:
@@ -306,6 +306,21 @@ def build_guess_questions():
         "chart_values": list(dist("modeling_clean", "Ad-hoc", "industry").values()),
         "chart_title": "Ad-hoc modeling rate by Industry",
         "highlight": "Healthcare",
+    })
+
+    questions.append({
+        "question": "What % of teams expect to **shrink** in 2026?",
+        "answer": round((base["team_growth_2026"] == "Shrink").mean() * 100, 1),
+        "hint": "The field is generally optimistic...",
+        "reveal": "Cautious optimism. 42% expect growth vs only 7% shrinkage.",
+        "category": "Outlook",
+        "chart_labels": ["Grow", "Stay the same", "Shrink", "Not sure"],
+        "chart_values": [
+            round((base["team_growth_2026"] == g).mean() * 100, 1)
+            for g in ["Grow", "Stay the same", "Shrink", "Not sure"]
+        ],
+        "chart_title": "Team growth expectations 2026",
+        "highlight": "Shrink",
     })
 
     questions.append({
