@@ -445,7 +445,15 @@ if st.session_state.game_mode is None:
     )
 
     c1, c2 = st.columns(2)
+
     with c1:
+        st.markdown("### 🎯 Guess the Number")
+        st.markdown("Use the slider to guess percentages. Precision = points. See the full picture on reveal.")
+        if st.button("Play Guess the Number", use_container_width=True, type="primary"):
+            st.session_state.game_mode = "guess"
+            reset_game()
+            st.rerun()
+    with c2:
         st.markdown("### ⬆️⬇️ Higher or Lower")
         st.markdown("See a real stat. Guess if the next group is higher or lower. Build your streak.")
         if st.button("Play Higher/Lower", use_container_width=True, type="primary"):
@@ -453,13 +461,7 @@ if st.session_state.game_mode is None:
             reset_game()
             st.rerun()
 
-    with c2:
-        st.markdown("### 🎯 Guess the Number")
-        st.markdown("Use the slider to guess percentages. Precision = points. See the full picture on reveal.")
-        if st.button("Play Guess the Number", use_container_width=True, type="primary"):
-            st.session_state.game_mode = "guess"
-            reset_game()
-            st.rerun()
+
 
     st.markdown("---")
     st.caption("Data: 2026 Practical Data Community State of Data Engineering Survey by Joe Reis · 1,101 respondents")
